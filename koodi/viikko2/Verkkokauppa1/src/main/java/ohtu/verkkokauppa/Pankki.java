@@ -1,5 +1,9 @@
 package ohtu.verkkokauppa;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Pankki implements Maksu {
 
     private Tapahtumaloki kirjanpito;
@@ -7,7 +11,7 @@ public class Pankki implements Maksu {
     public Pankki() {
 
     }
-
+    @Autowired
     public Pankki(Tapahtumaloki kirjanpito) {
         this.kirjanpito = kirjanpito;
     }

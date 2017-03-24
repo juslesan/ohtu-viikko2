@@ -1,7 +1,10 @@
 package ohtu.verkkokauppa;
 
 import java.util.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Varasto implements Sailytys {
 
     private Tapahtumaloki kirjanpito;
@@ -12,6 +15,7 @@ public class Varasto implements Sailytys {
         alustaTuotteet();
     }
 
+    @Autowired
     public Varasto(Tapahtumaloki kirjanpito) {
         this.kirjanpito = kirjanpito;
         saldot = new HashMap<Tuote, Integer>();
